@@ -2,15 +2,28 @@
 <!-- 
 INSTRUCTIONS
 _____________
-COPY & PASTE THE FOLLOWING CODE INTO A HOSTED HTML DOCUMENT IN ORDER TO EMBED IT.
+THIS IS THE FULL CODE THAT SHOULD BE HOSTED IN ORDER TO HOST A CEROS PAGE
 
 **URLS MUST BE REPLACED WITH THE APPROPRIATE LINKS**
 -->
 
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
 <style>*, html, body {margin:0 !important;height:100%;}</style>	
-<div style="position:relative;width:auto;padding:0 0 54.6%;height:100%;top:0;left:0;bottom:0;right:0;margin:0;border:0 none" data-large-break-on="1140" data-medium-break-on="815" data-small-break-on="640" data-xlg-id="experience-5a05a3e85ffcg" data-xlg-src="https://view.ceros.com/geico/go381-lg" data-xlg-padding="0" data-lg-id="experience-5a05a3e85ffce" data-lg-src="https://view.ceros.com/geico/go381-sm" data-lg-padding="0" data-md-id="experience-5a03640d25a23" data-md-src="https://view.ceros.com/geico/go381-tablet" data-md-padding="0" data-sm-id="experience-5a035d534f361" data-sm-src="https://view.ceros.com/geico/go381-mobile" data-sm-padding="0">
-    <iframe allowfullscreen style="position:absolute;width:100%;height:100%;top:0;left:0;bottom:0;right:0;margin:0;padding:0;border:0 none" frameborder="0" class="ceros-experience"></iframe>
+<div style="position:absolute;width:auto;padding:0 0 54.6%;height:100%;top:0;left:0;bottom:0;right:0;margin:0;border:0 none" data-large-break-on="1140" data-medium-break-on="815" data-small-break-on="640" data-xlg-id="experience-5a05a3e85ffcg" data-xlg-src="https://view.ceros.com/geico/go381-lg" data-xlg-padding="0" data-lg-id="experience-5a05a3e85ffce" data-lg-src="https://view.ceros.com/geico/go381-sm" data-lg-padding="0" data-md-id="experience-5a03640d25a23" data-md-src="https://view.ceros.com/geico/go381-tablet" data-md-padding="0" data-sm-id="experience-5a035d534f361" data-sm-src="https://view.ceros.com/geico/go381-mobile" data-sm-padding="0">
+    <iframe target="_parent" allowfullscreen style="position:absolute;width:100%;height:100%;top:0;left:0;bottom:0;right:0;margin:0;padding:0;border:0 none" frameborder="0" class="ceros-experience"></iframe>
 </div>
 <!-- JavaScript Code... only needed once per page -->
 <script>!function(a,b){"use strict";"undefined"!=typeof exports?b(exports):"function"==typeof define&&define.amd?define(["exports"],b):b(a)}(this,function(a){"use strict";var b="CEROS_SCROLL_PROXY_LOADED";if(!window[b]){window[b]=!0;for(var c="ceros-embedded-viewport:",d={PING:"ping",READY:"ready",POSITION:"position",SCROLL_TO:"scroll-to"},e=[],f=function(a){var b=a.getBoundingClientRect(),c={top:-b.top,bottom:window.innerHeight-b.top};l(a,d.POSITION,c)},g=function(){for(var a=0;a<e.length;a++)f(e[a])},h=function(a,b){for(var c=null,d=0;d<a.length;d++)if(a[d].contentWindow===b){c=a[d];break}return c},i=function(a){var b=h(document.getElementsByTagName("iframe"),a);b&&(e.push(b),f(b))},j=function(a,b){var c=h(e,a);if(c){var d=Math.max(0,b.scrollPosition-b.pageHeight+b.visibleHeight),f=c.getBoundingClientRect(),g=window.pageYOffset+f.top,i=window.pageYOffset+f.bottom,j=f.bottom-f.top,k=d*j/b.visibleHeight,l=i-window.innerHeight;window.scroll(0,Math.min(k+g,l))}},k=function(a){var b,e;try{b=JSON.parse(a.data),e=b&&b.event&&b.event.substr(0,c.length)===c}catch(f){return}if(e)switch(b.event.substr(c.length)){case d.READY:i(a.source);break;case d.SCROLL_TO:j(a.source,b)}},l=function(a,b,d){var e={event:c+b};if(d)for(var f in d)d.hasOwnProperty(f)&&(e[f]=d[f]);var g=JSON.stringify(e);a.contentWindow.postMessage(g,"*")},m=document.getElementsByTagName("iframe"),n=0;n<m.length;n++)e.indexOf(-1===m[n])&&l(m[n],d.PING);window.sendViewportPositionEvent=f,window.addEventListener("message",k),window.addEventListener("scroll",g),window.addEventListener("resize",g)}});</script>
 <script>!function(){var e=function(){for(var e="data-",t="xlg-",r="lg-",n="md-",o="sm-",i="large-break-on",l="medium-break-on",d="small-break-on",m="id",s="src",u="padding",c=[i,l,d,t+m,t+s,t+u,r+m,r+s,r+u,n+m,n+s,n+u,o+m,o+s,o+u],g=document.querySelectorAll("iframe.ceros-experience"),b=0;b<g.length;b++){var p=g[b],A=p.parentNode,h=!0;for(a=0;a<c.length;a++){var k=c[a],f=A.getAttribute(e+k);if(null===f){h=!1;break}}if(h){var v,y,E=A.getAttribute(e+i),S=A.getAttribute(e+l),x=A.getAttribute(e+d),I=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,L=parseInt(E),W=parseInt(S),w=parseInt(x);console.log(I),L&&W&&w?w>=W?console.error("Small break point is larger than medium break point."):W>=L?console.error("Small break point is larger than medium break point."):(v=I>=L?"xlarge":I>=W?"large":I>=w?"medium":"small",y="xlarge"==v?e+t:"large"==v?e+r:"medium"==v?e+n:e+o,console.log(y),p.setAttribute(s,A.getAttribute(y+s)),A.setAttribute(m,A.getAttribute(y+m)),A.style["padding-bottom"]=A.getAttribute(y+u)):console.error("Unable to parse break point integer")}else console.error("Ceros Embed Tag is missing attribute/s.")}};"loading"!=document.readyState?e():document.addEventListener?document.addEventListener("DOMContentLoaded",e):document.attachEvent("onreadystatechange",function(){"complete"==document.readyState&&e()})}();</script>
+	
+	
+</body>
+</html>
