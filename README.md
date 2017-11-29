@@ -18,7 +18,7 @@ This code should be inserted into each experience.
 
 
 ```
-This code should be inserted into hosted HTML pages.
+This code should be inserted into hosted HTML pages (the empty shell for IT).
 ```
 
 ### ZIP Code Form
