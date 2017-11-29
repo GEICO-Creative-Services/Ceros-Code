@@ -21,6 +21,12 @@ This code should be inserted into each experience.
 This code should be inserted into hosted HTML pages.
 ```
 
+### ZIP Code Form
+
+```
+This code should be embedded within your Ceros experience wherever you want your ZIP code entry form.
+```
+
 ### Readme.md
 
 
