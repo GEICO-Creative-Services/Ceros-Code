@@ -1,0 +1,48 @@
+<script type="text/javascript">
+	//disclaimer
+	var copyright_elem = document.getElementById("copyright");
+	var currentYear = new Date().getFullYear();
+	var default_msg = "Some discounts, coverages, payment plans and features are not available in all states or all GEICO companies. GEICO is a registered service mark of  Government Employees Insurance Company, Washington, D.C. 20076; a Berkshire Hathaway Inc. subsidiary.  GEICO Gecko Image &copy;1999-" + currentYear + " &copy; " + currentYear + " GEICO";
+
+	if(copyright_elem != null && copyright_elem.innerHTML === ''){
+		if (copyright_elem.hasAttribute("data-string") && copyright_elem.getAttribute('data-string') != '') {
+			var str = copyright_elem.getAttribute('data-string');
+		 	var res = str.split("|");
+		 	var output = '';
+			
+			if(typeof disclaimer.length != 'undefined'){
+				for(var i = 0; i < res.length; i++) {
+					if(res[i].indexOf("[p]") != -1){
+						res[i] = res[i].replace('[p]','');						
+						
+						for(var j = 0; j < disclaimer.length; j++) {
+						    var obj = disclaimer[j];
+
+					    	if(res[i].toLowerCase() == obj.category){
+						    	output += '<p>' + obj.msg + ' </p>'
+					    	}	 	
+						}
+			    }
+			    else{
+			    	for(var j = 0; j < disclaimer.length; j++) {
+					    var obj = disclaimer[j];
+
+					   	if(res[i].toLowerCase() == obj.category){
+					    	output += "<span>" + obj.msg + " </span>"
+					   	}	 	
+						}
+			    }
+			  }
+			  copyright_elem.innerHTML = output;		
+			}
+			else {				
+				copyright_elem.innerHTML = default_msg;
+			}
+		}
+		else {
+			copyright_elem.innerHTML = default_msg;
+		}
+	}	
+
+	
+</script>
