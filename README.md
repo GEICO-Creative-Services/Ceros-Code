@@ -7,11 +7,12 @@ USE THIS REPOSITORY WITH CAUTION, IT IS PUBLIC SO DON'T POST ANYTHING THAT SHOUL
 
 
 ## What are these files?
-### Experience Code
+
+### Disclaimer Code
 
 
 ```
-This code should be inserted into each experience.
+This code should be inserted into each experience that requires a live disclaimer.
 ```
 
 ### Embed Code
@@ -19,6 +20,20 @@ This code should be inserted into each experience.
 
 ```
 This code should be inserted into hosted HTML pages (the empty shell for IT).
+```
+
+### Experience Code Desktop
+
+
+```
+This code should be inserted into each desktop experience.
+```
+
+### Experience Code Mobile
+
+
+```
+This code should be inserted into each mobile experience.
 ```
 
 ### ZIP Code Form
