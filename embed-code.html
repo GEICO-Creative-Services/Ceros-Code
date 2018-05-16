@@ -4,26 +4,330 @@ INSTRUCTIONS
 _____________
 THIS IS THE FULL CODE THAT SHOULD BE HOSTED IN ORDER TO HOST A CEROS PAGE
 
-**URLS MUST BE REPLACED WITH THE APPROPRIATE LINKS**
+**URLS AND IDS MUST BE REPLACED WITH THE APPROPRIATE LINKS**
 -->
 
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 
-<body>
-<style>*, html, body {margin:0 !important;height:100%;}</style>	
-<div style="position:absolute;width:auto;padding:0 0 54.6%;height:100%;top:0;left:0;bottom:0;right:0;margin:0;border:0 none" data-large-break-on="1140" data-medium-break-on="815" data-small-break-on="640" data-xlg-id="experience-5a05a3e85ffcg" data-xlg-src="https://view.ceros.com/geico/go381-lg" data-xlg-padding="0" data-lg-id="experience-5a05a3e85ffce" data-lg-src="https://view.ceros.com/geico/go381-sm" data-lg-padding="0" data-md-id="experience-5a03640d25a23" data-md-src="https://view.ceros.com/geico/go381-tablet" data-md-padding="0" data-sm-id="experience-5a035d534f361" data-sm-src="https://view.ceros.com/geico/go381-mobile" data-sm-padding="0">
-    <iframe target="_parent" allowfullscreen style="position:absolute;width:100%;height:100%;top:0;left:0;bottom:0;right:0;margin:0;padding:0;border:0 none" frameborder="0" class="ceros-experience"></iframe>
-</div>
-<!-- JavaScript Code... only needed once per page -->
-<script>!function(a,b){"use strict";"undefined"!=typeof exports?b(exports):"function"==typeof define&&define.amd?define(["exports"],b):b(a)}(this,function(a){"use strict";var b="CEROS_SCROLL_PROXY_LOADED";if(!window[b]){window[b]=!0;for(var c="ceros-embedded-viewport:",d={PING:"ping",READY:"ready",POSITION:"position",SCROLL_TO:"scroll-to"},e=[],f=function(a){var b=a.getBoundingClientRect(),c={top:-b.top,bottom:window.innerHeight-b.top};l(a,d.POSITION,c)},g=function(){for(var a=0;a<e.length;a++)f(e[a])},h=function(a,b){for(var c=null,d=0;d<a.length;d++)if(a[d].contentWindow===b){c=a[d];break}return c},i=function(a){var b=h(document.getElementsByTagName("iframe"),a);b&&(e.push(b),f(b))},j=function(a,b){var c=h(e,a);if(c){var d=Math.max(0,b.scrollPosition-b.pageHeight+b.visibleHeight),f=c.getBoundingClientRect(),g=window.pageYOffset+f.top,i=window.pageYOffset+f.bottom,j=f.bottom-f.top,k=d*j/b.visibleHeight,l=i-window.innerHeight;window.scroll(0,Math.min(k+g,l))}},k=function(a){var b,e;try{b=JSON.parse(a.data),e=b&&b.event&&b.event.substr(0,c.length)===c}catch(f){return}if(e)switch(b.event.substr(c.length)){case d.READY:i(a.source);break;case d.SCROLL_TO:j(a.source,b)}},l=function(a,b,d){var e={event:c+b};if(d)for(var f in d)d.hasOwnProperty(f)&&(e[f]=d[f]);var g=JSON.stringify(e);a.contentWindow.postMessage(g,"*")},m=document.getElementsByTagName("iframe"),n=0;n<m.length;n++)e.indexOf(-1===m[n])&&l(m[n],d.PING);window.sendViewportPositionEvent=f,window.addEventListener("message",k),window.addEventListener("scroll",g),window.addEventListener("resize",g)}});</script>
-<script>!function(){var e=function(){for(var e="data-",t="xlg-",r="lg-",n="md-",o="sm-",i="large-break-on",l="medium-break-on",d="small-break-on",m="id",s="src",u="padding",c=[i,l,d,t+m,t+s,t+u,r+m,r+s,r+u,n+m,n+s,n+u,o+m,o+s,o+u],g=document.querySelectorAll("iframe.ceros-experience"),b=0;b<g.length;b++){var p=g[b],A=p.parentNode,h=!0;for(a=0;a<c.length;a++){var k=c[a],f=A.getAttribute(e+k);if(null===f){h=!1;break}}if(h){var v,y,E=A.getAttribute(e+i),S=A.getAttribute(e+l),x=A.getAttribute(e+d),I=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,L=parseInt(E),W=parseInt(S),w=parseInt(x);console.log(I),L&&W&&w?w>=W?console.error("Small break point is larger than medium break point."):W>=L?console.error("Small break point is larger than medium break point."):(v=I>=L?"xlarge":I>=W?"large":I>=w?"medium":"small",y="xlarge"==v?e+t:"large"==v?e+r:"medium"==v?e+n:e+o,console.log(y),p.setAttribute(s,A.getAttribute(y+s)),A.setAttribute(m,A.getAttribute(y+m)),A.style["padding-bottom"]=A.getAttribute(y+u)):console.error("Unable to parse break point integer")}else console.error("Ceros Embed Tag is missing attribute/s.")}};"loading"!=document.readyState?e():document.addEventListener?document.addEventListener("DOMContentLoaded",e):document.attachEvent("onreadystatechange",function(){"complete"==document.readyState&&e()})}();</script>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>	  <html class="ie lt-ie10" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><script blzsys="1" type="text/javascript">//<![CDATA[
+
+var aFEOTagsMap={};var aFeoOverrideAttrRead=function(tag,att,el){try{var pref="data-feo-orig-";if(el){if(!el.getAttribute(pref+att)){return;}}else{var els;if(tag in aFEOTagsMap){els=aFEOTagsMap[tag];}else{els=document.getElementsByTagName(tag);aFEOTagsMap[tag]=els;}for(var i=els.length-1;i>=0;i--){el=els[i];if(el.getAttribute(pref+att)){if(el.aFeoRealGetAttribute){return;}else{break;}}}if(i<0){return;}}el.aFeoRealGetAttribute=el.getAttribute;el.getAttribute=function(a,force){if(a==att&&!force){a=pref+a;}return this.aFeoRealGetAttribute(a);};Object.defineProperty(el,att,{get:function(){return this.aFeoRealGetAttribute(pref+att);}});}catch(err){}};
+
+//]]></script><script blzsys="1" type="text/javascript">var aFeoApplied=true;</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="keywords" content="Car Insurance, Auto Insurance, Motorcycle Insurance, homeowners insurance, Geico Gecko, Insurance, online car insurance, discount car insurance, Free Insurance quote, www.geico.com, GEICO insurance, GEICO car insurance, GIECO, GEICO auto insurance, Identity Theft Protection" />
+	<meta name="description" content="GEICO, Government Employees Insurance Company, has been providing affordable auto insurance since 1936. You can trust GEICO to offer low car insurance rates." />
+	<meta name="format-detection" content="telephone=no" />
+	<title>GEICO | Auto Insurance</title>
+	<link rel="stylesheet" href="/public/design-kit/4.0/css/geico-design-kit-light.css" type="text/css" media="all" />
+	<style>*, html, body {margin:0 !important;padding:0;height:100%;}</style>
+    <script id="ceros-event-delegate" src="//labs.ceros.com/ga-and-gtm-extension/v1-0/analytics-event-delegate.min.js?cb=1" data-mode="google-analytics" ></script> 
+
+  <script language="javascript">
+
+	var curLogo = "00001";
+	var zip="";
+
+	//Adding this function to preserve parameters but also limit SOA with both POST and GET methods
+	location.params = function(params) {
+		var params_obj = {}, i, parts, len, key, value;
+
+		if (typeof params === 'string') {
+			value = location.search.match(new RegExp('[?&]' + params + '=?([^&]*)[&#$]?'));
+			return value ? value[1] : undefined;
+		}
+
+		var _params = location.search.substr(1).split('&');
+
+		for (i = 0, len = _params.length; i < len; i++) {
+			parts = _params[i].split('=');
+			if (! parts[0]) {continue;}
+			params_obj[parts[0]] = parts[1] || true;
+		}
+
+		if (typeof params !== 'object') {return params_obj;}
+
+		for (key in params) {
+			value = params[key];
+			if (typeof value === 'undefined') {
+				delete params_obj[key];
+			} else {
+				params_obj[key] = value;
+			}
+		}
+
+		parts = [];
+		for (key in params_obj) {
+			parts.push(key + (params_obj[key] === true ? '' : '=' + params_obj[key]));
+		}
+
+		location.search = parts.join('&');
+	};
+
+	function getURLParam(){
+		var foundSOA = "";
+		var showWhat = "";
+		var foundLogo = "";
+		var strHref = window.location.href;
+		
+		if ( strHref.indexOf("?") > -1 ){
+			var strParams = strHref.substr(strHref.indexOf("?")).toLowerCase();
+			var paramsArray = strParams.split("&");
+			for (var i = 0; i < paramsArray.length; i++){
+				if ((paramsArray[i].indexOf("soa=") > -1 ) || (paramsArray[i].indexOf("s=") > -1 )){
+					var aParamArray = paramsArray[i].split("=");
+					//If our SOA is greater than 6 characters, reduce it
+					if (aParamArray[1].length > 6) {
+						aParamArray[1] = aParamArray[1].substring(0,6);
+						location.params({soa: aParamArray[1]});
+					}
+					foundSOA = aParamArray[1];
+				}
+				if (paramsArray[i].indexOf("show=") > -1 ){
+					var aParamArray = paramsArray[i].split("=");
+					showWhat = aParamArray[1];
+				}
+				if (paramsArray[i].indexOf("logo=") > -1 ){
+					var aParamArray = paramsArray[i].split("=");
+					//If our logo is greater than 6 characters, reduce it
+					if (aParamArray[1].length > 6) {
+						aParamArray[1] = aParamArray[1].substring(0,6);
+						location.params({logo: aParamArray[1]});
+					}
+					foundLogo = aParamArray[1];
+				}
+				if (paramsArray[i].indexOf("zip=") > -1 ){
+					var aParamArray = paramsArray[i].split("=");
+					zip = aParamArray[1];
+				}
+			}
+		}
+		if (foundSOA == "") {
+			foundSOA = "00001";
+		}
+		if (showWhat == "logo") {
+			curLogo = foundSOA;
+		}
+		if (foundLogo != "") {
+			curLogo = foundLogo;
+		}
+
+  		return foundSOA;
+	}
+
+	var curSOA = getURLParam();
+
+	function modifyForm(form){
+		form = typeof form !== 'undefined' ? form : document.forms[0];  //default to first form in document
+		for (i=0; i<form.length; i++){
+			var item = form.elements[i];
+			if (item.name == "POL_soaCode" || item.name == "soa"){
+				item.value = curSOA;
+			}
+		}
+	}
+
+	function addURLparam(form){
+		form = typeof form !== 'undefined' ? form : document.forms[0];  //default to first form in document
+		var strHref = window.location.href;
+  		var strParam = "";
+    	if (strHref.indexOf("?") > -1 ){
+  			strParam = strHref.substr(strHref.indexOf("?") + 1);
+		}
+    	form.action = form.action + strParam;
+	}
+
+	function appendFormValues(form){
+		form = typeof form !== 'undefined' ? form : document.forms[0];  //default to first form in document
+		var formvalues="";
+		for (i=0; i<form.length; i++){
+			var item = form.elements[i];
+			var formitem = item.name;
+			var formvalue = item.value;
+			formvalues += formitem + "=" + formvalue + "&";
+		}
+		form.action = form.action + "?" + formvalues;
+	}
+
+	function addPageData(form){
+		form = typeof form !== 'undefined' ? form : document.forms[0];  //default to first form in document
+		modifyForm(form);
+		appendFormValues(form);
+		addURLparam(form);
+	}
+
+
+
+
+
+
+
+
+
+window.onload = function() {
+  //if zipcode is part of the url parameters, pre-fill the form with the given zipcode
+	if(document.getElementsByName("POL_ratedZip5").length > 0 && zip != "")
+	{						
+		document.getElementsByName("POL_ratedZip5")[0].value = zip;
+	}
+	if(document.getElementsByName("zip").length > 0 && zip != "")
+	{
+		document.getElementsByName("zip")[0].value = zip;
+	}
+	if(document.getElementsByName("Zip").length > 0 && zip != "")
+	{
+		document.getElementsByName("Zip")[0].value = zip;
+	}
+	if(document.getElementsByName("Zipcode").length > 0 && zip != "")
+	{
+		document.getElementsByName("Zipcode")[0].value = zip;
+	}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+<!--$Revision: 1.2 $-->
+<!--$Name:  $-->
+
 	
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-34118221-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+	<script src='//cdn.optimizely.com/js/136969815.js'></script>
+	
+	<script type="text/javascript"> 
+	    var geicoDtm = { 
+	        "viewName":"Static:LandingPage:Go457"
+	    };
+	</script>
+	<script type="text/javascript" src="//assets.adobedtm.com/59c8b00c30f55a1efed66b762329259018acac6a/satelliteLib-78c2526d6878a4956eac29f3a5287691708b8037.js"></script>
+	
+</head>
+<body>
+    
+		
+    
+    
+
+<!-- Modified Ceros Embed Link  
+
+To change breakpoint, modify value of 'data-small-break-on'; by default, it is set to 700px.
+
+To update large experience, update 'data-lg-id' with large experience ID and 'data-lg-src' with large experience URL
+
+To update mobile experience, update 'data-mob-id' with mobile experience ID and 'data-mob-src' with mobile experience URL
+
+-->
+<div style="position:absolute;width:auto;padding:0 0 54.6%;height:100%;top:0;left:0;bottom:0;right:0;margin:0;border:0 none" data-mobile-break-on="700" data-lg-id="experience-5ae79068af724" data-lg-src="https://view.ceros.com/geico/go999-lg-1" data-lg-padding="0" data-mob-id="experience-5ae785e5a2169" data-mob-src="https://view.ceros.com/geico/go999-mobile" data-mob-padding="">
+     <iframe target='_parent' allowfullscreen style="position:absolute;width:100%;height:100%;top:0;left:0;bottom:0;right:0;margin:0;padding:0;border:0 none" frameborder="0" class="ceros-experience"></iframe>
+</div>
+
+<!-- scroll-proxy.min.js  -->
+<script>!function(a,b){"use strict";"undefined"!=typeof exports?b(exports):"function"==typeof define&&define.amd?define(["exports"],b):b(a)}(this,function(a){"use strict";var b="CEROS_SCROLL_PROXY_LOADED";if(!window[b]){window[b]=!0;for(var c="ceros-embedded-viewport:",d={PING:"ping",READY:"ready",POSITION:"position",SCROLL_TO:"scroll-to",GOTO_URL:"goto-url"},e=[],f=function(a){var b=a.getBoundingClientRect(),c={top:-b.top,bottom:window.innerHeight-b.top};m(a,d.POSITION,c)},g=function(){for(var a=0;a<e.length;a++)f(e[a])},h=function(a,b){for(var c=null,d=0;d<a.length;d++)if(a[d].contentWindow===b){c=a[d];break}return c},i=function(a){var b=h(document.getElementsByTagName("iframe"),a);b&&(e.push(b),f(b))},j=function(a,b){var c=h(e,a);if(c){var d=Math.max(0,b.scrollPosition-b.pageHeight+b.visibleHeight),f=c.getBoundingClientRect(),g=window.pageYOffset+f.top,i=window.pageYOffset+f.bottom,j=f.bottom-f.top,k=d*j/b.visibleHeight,l=i-window.innerHeight;window.scroll(0,Math.min(k+g,l))}},k=function(a,b){b.urlOpenInNewWindow?window.open(b.url):window.location=b.url},l=function(a){var b,e;try{b=JSON.parse(a.data),e=b&&b.event&&b.event.substr(0,c.length)===c}catch(f){return}if(e)switch(b.event.substr(c.length)){case d.READY:i(a.source);break;case d.SCROLL_TO:j(a.source,b);break;case d.GOTO_URL:k(a.source,b)}},m=function(a,b,d){var e={event:c+b};if(d)for(var f in d)d.hasOwnProperty(f)&&(e[f]=d[f]);var g=JSON.stringify(e);a.contentWindow.postMessage(g,"*")},n=document.getElementsByTagName("iframe"),o=0;o<n.length;o++)e.indexOf(-1===n[o])&&m(n[o],d.PING);window.sendViewportPositionEvent=f,window.addEventListener("message",l),window.addEventListener("scroll",g),window.addEventListener("resize",g)}});
+</script>
+    
+<!-- Dual Experience Variant Switcher -->    
+<script>(function(){var populateFrame=function(){var dataPrefix="data-",largePrefix="lg-",mobilePrefix="mob-",mobileBreakOn='mobile-break-on',id='id',src='src',padding='padding';var allAttrs=[mobileBreakOn,largePrefix+id,largePrefix+src,largePrefix+padding,mobilePrefix+id,mobilePrefix+src,mobilePrefix+padding];var cerosFrames=document.querySelectorAll("iframe.ceros-experience");for(var i=0;i<cerosFrames.length;i++){var cerosFrame=cerosFrames[i],cerosContainer=cerosFrame.parentNode;var allAttributesSet=!0;for(a=0;a<allAttrs.length;a++){var currentAttr=allAttrs[a],attrValue=cerosContainer.getAttribute(dataPrefix+currentAttr);if(attrValue===null){allAttributesSet=!1;break}}
+if(allAttributesSet){var deviceSize,sizePrefix,mobileBreakPoint=cerosContainer.getAttribute(dataPrefix+mobileBreakOn);var windowWidth=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,mobileBreakPointInt=parseInt(mobileBreakPoint);console.log(windowWidth);if(mobileBreakPointInt){if(windowWidth>=mobileBreakPointInt)
+{deviceSize="large"}
+else{deviceSize="mobile"}}
+else{console.error("Unable to parse break point integer");continue}}else{console.error("Ceros Embed Tag is missing attribute/s.");continue}
+if(deviceSize=="large")
+{sizePrefix=dataPrefix+largePrefix}
+else{sizePrefix=dataPrefix+mobilePrefix}
+console.log(sizePrefix);cerosFrame.setAttribute(src,cerosContainer.getAttribute(sizePrefix+src));cerosContainer.setAttribute(id,cerosContainer.getAttribute(sizePrefix+id));cerosContainer.style["padding-bottom"]=cerosContainer.getAttribute(sizePrefix+padding)}};if(document.readyState!='loading'){populateFrame()}else if(document.addEventListener){document.addEventListener('DOMContentLoaded',populateFrame)}else{document.attachEvent('onreadystatechange',function(){if(document.readyState=='complete'){populateFrame()}})}})()</script>
+
+
+
+
+
+	<script type="text/javascript">_satellite.pageBottom();</script>
+	
+<script type="text/javascript">
+	//Qualaroo for geico.com
+	var _kiq = _kiq || [];
+	(function(){
+		setTimeout(function(){
+		var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
+		s.async = true; s.src = '//s3.amazonaws.com/ki.js/54196/bQ9.js'; f.parentNode.insertBefore(s, f);
+		}, 1);
+	})();
+</script>
+
+<script type="text/javascript">
+	//disclaimer
+	var copyright_elem = document.getElementById("copyright");
+	var currentYear = new Date().getFullYear();
+	var default_msg = "Some discounts, coverages, payment plans and features are not available in all states or all GEICO companies. GEICO is a registered service mark of  Government Employees Insurance Company, Washington, D.C. 20076; a Berkshire Hathaway Inc. subsidiary.  GEICO Gecko Image &copy;1999-" + currentYear + " &copy; " + currentYear + " GEICO";
+
+	if(copyright_elem != null && copyright_elem.innerHTML === ''){
+		if (copyright_elem.hasAttribute("data-string") && copyright_elem.getAttribute('data-string') != '') {
+			var str = copyright_elem.getAttribute('data-string');
+		 	var res = str.split("|");
+		 	var output = '';
+			
+			if(typeof disclaimer.length != 'undefined'){
+				for(var i = 0; i < res.length; i++) {
+					if(res[i].indexOf("[p]") != -1){
+						res[i] = res[i].replace('[p]','');						
+						
+						for(var j = 0; j < disclaimer.length; j++) {
+						    var obj = disclaimer[j];
+
+					    	if(res[i].toLowerCase() == obj.category){
+						    	output += '<p>' + obj.msg + ' </p>'
+					    	}	 	
+						}
+			    }
+			    else{
+			    	for(var j = 0; j < disclaimer.length; j++) {
+					    var obj = disclaimer[j];
+
+					   	if(res[i].toLowerCase() == obj.category){
+					    	output += "<span>" + obj.msg + " </span>"
+					   	}	 	
+						}
+			    }
+			  }
+			  copyright_elem.innerHTML = output;		
+			}
+			else {				
+				copyright_elem.innerHTML = default_msg;
+			}
+		}
+		else {
+			copyright_elem.innerHTML = default_msg;
+		}
+	}	
+
+	
+</script>
+
 	
 </body>
 </html>
