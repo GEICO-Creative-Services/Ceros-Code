@@ -163,3 +163,162 @@ data-tracking-id=”UA-34118221-1”
   });
 });
 </script>
+<script>
+(function (root) {
+    'use strict';
+
+    /**
+     * Safely add a URL Param to a given URL
+     *
+     * @param {string} url
+     * @param {string} key
+     * @param {string} value
+     * @return {string}
+     */
+    var setParamInUrl = function (url, key, value) {
+
+        key = encodeURI(key);
+        value = encodeURI(value);
+
+        // Split the URL into its path etc and query string
+        var urlParts = url.split('?'),
+          params = [];
+
+        // If there was a query string
+        if (urlParts.length > 1) {
+            // turn query string array of params ['key=value', ...]
+            params = urlParts[1].split('&');
+        }
+
+        // Flag for if the URL already has this param
+        var foundKey = false;
+
+        // For every existing param
+        for (var i = 0; i < params.length; i++) {
+
+            var paramKeyAndValue = params[i].split('=');
+
+            // If this param is the same as the one we're setting
+            if (paramKeyAndValue[0] === key) {
+
+                foundKey = true;
+
+                // Update its value and put it back in the array
+                paramKeyAndValue[1] = value;
+                params[i] = paramKeyAndValue.join('=');
+
+                break;
+            }
+
+        }
+
+        // If we didn't find a param with the same name, add ours as a new one
+        if (foundKey === false) {
+            params.push(key + '=' + value);
+        }
+
+        // Build the URL back up and return it
+        return urlParts[0] + '?' + params.join('&');
+    };
+
+    /**
+     * Get the SOA parameter from the current URL's query string. This is mostly
+     * copied from https://www.geico.com/landingpage/go381 with some removal of
+     * logic we don't need.
+     *
+     * @return {string}
+     */
+    function getSOAParam(url) {
+        var foundSOA = "";
+        var strHref = url;
+        
+        if ( strHref.indexOf("?") > -1 ){
+            var strParams = strHref.substr(strHref.indexOf("?")).toLowerCase();
+
+            var paramsArray = strParams.split("&");
+            for (var i = 0; i < paramsArray.length; i++) {
+                if ((paramsArray[i].indexOf("soa=") > -1 ) || (paramsArray[i].indexOf("s=") > -1 )) {
+                    var aParamArray = paramsArray[i].split("=");
+
+                    //If our SOA is greater than 6 characters, reduce it
+                    if (aParamArray[1].length > 6) {
+                        aParamArray[1] = aParamArray[1].substring(0,6);
+                        location.params({soa: aParamArray[1]});
+                    }
+
+                    foundSOA = aParamArray[1];
+                }
+            }
+        }
+
+        return foundSOA;
+    }
+
+    root.handleFormSubmit = function(formElement) {
+      console.log(formElement);
+        formElement = formElement || document.getElementById('sdkZipForm');
+        if(!formElement) {
+            return;
+        }
+
+        var formAction = formElement.getAttribute('action');
+
+        var zipInput = document.getElementById('zipInput')
+        if(zipInput) {
+            var zipValue = zipInput.value;
+
+            formAction = setParamInUrl(formAction, 'POL_ratedZip5', zipValue);
+        }
+
+        var soaInput = document.getElementById('soaInput')
+        if(soaInput) {
+            var soaValue = getSOAParam(window.location.href);
+            if (soaValue === "" && document.referrer) {
+                soaValue = getSOAParam(document.referrer);
+            }
+            if (soaValue === "") {
+                soaValue = "00001";
+            }
+            
+            soaInput.value = soaValue;
+
+            formAction = setParamInUrl(formAction, 'soa', soaValue);
+        }
+
+        formElement.setAttribute('action', formAction);
+    }
+
+    require.config({
+        paths: {
+            CerosSDK: "//sdk.ceros.com/standalone-player-sdk-v4.min"
+        }
+    });
+
+    require(['CerosSDK'], function (CerosSDK) {
+
+        CerosSDK.findExperience()
+          .fail(function (error) {
+              console.error(error);
+          })
+          .done(function (experience) {
+
+              var componentCollection = experience.findComponentsByTag('submit-form');
+
+              componentCollection.subscribe(CerosSDK.EVENTS.CLICKED, function (component) {
+                  var formElement = document.getElementById('sdkZipForm');
+                  if(!formElement) {
+                      return;
+                  }
+
+                  handleFormSubmit(formElement);
+                  formElement.submit();
+              });
+
+
+          });
+
+    });
+
+
+})(window);
+</script>
