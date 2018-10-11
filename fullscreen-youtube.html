@@ -1,0 +1,47 @@
+<!-- VIDEO COVER -->
+<style>
+    #cover {
+        height:100%!important; 
+        width:100% !important;
+    }
+</style>
+<div id="cover"></div>
+
+
+<!-- VIDEO -->
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+    <div id="player"></div><script>var player, iframe;
+var $ = document.querySelector.bind(document);
+
+// init player
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '0',
+    width: '0',
+    videoId: 'JyyJgAHXVHE',
+      playerVars: {rel: 0},
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
+}
+// when ready, wait for clicks
+function onPlayerReady(event) {
+  var player = event.target;
+  iframe = $('#player');
+  setupListener(); 
+}
+function setupListener (){
+$('#cover').addEventListener('click', playFullscreen);
+}
+function playFullscreen (){
+    player.playVideo();//won't work on mobile
+  var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
+  if (requestFullScreen) {
+    requestFullScreen.bind(iframe)();
+  }
+}
+</script>
